@@ -8,17 +8,19 @@
 
 {% block content %}
 <div class="container">
-
-    <h2>
-        {{object.name}}
-    </h2>
-
-    <li>
-        {{object.created}}
-    </li>
-    <li>
-        {{object.updated}}
-    </li>
+    <h2>{{object.name }}</h2>
+    <h4><a href="{{ object.tech.profile.get_absolute_url }}">{{object.tech.profile.last_name}},
+            {{object.tech.profile.first_name}}</a></h4>
+    <p class="small text-muted">{{object.updated}}</p>
+    <hr>
+        <h4>Agencies</h4>
+        {% for agency in object.agency.all %}
+        <li>
+            <a href="{{agency.get_absolute_url}}">
+                {{agency.name }}
+            </a>
+        </li>
+        {% endfor %}
 </div>
 
 {% endblock content %}
