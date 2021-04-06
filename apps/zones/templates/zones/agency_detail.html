@@ -10,8 +10,8 @@
 <div class="container">
     <h2>{{object.name }}</h2>
     <h4><a href="{{ object.zone.get_absolute_url }}">{{object.zone}}</a></h4>
-    <h4><a href="{{ object.zone.tech.profile.get_absolute_url }}">{{object.zone.tech.get_full_name
-            }}</a></h4>
+    <h4><a href="{{ object.zone.tech.profile.get_absolute_url }}">
+        {{object.zone.tech.profile.get_full_name}}</a></h4>
     <p class="small text-muted">{{object.updated}}</p>
     <hr>
 
