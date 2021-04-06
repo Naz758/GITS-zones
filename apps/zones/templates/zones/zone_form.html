@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Add Zone
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="container my-3">
+        <a href="/">back</a>
+    </div>
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">submit</button>
+</form>
+</div>
+{% endblock content %}
+    
+    

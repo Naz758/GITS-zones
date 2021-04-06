@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Zones
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="container my-3">
+        <a href="{% url 'zones:zone-create-view' %}">add zone</a>
+    </div>
+    <ul>
+        {% for object in object_list %}
+        <li>
+            <!-- <a href="{{ object.get_absolute_url }}"> -->
+            <a href="{% url 'zones:zone-detail-view' object.pk %}">
+                {{object.name}}
+            </a>
+        </li>
+
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
